@@ -39,7 +39,7 @@ pip install "uvicorn[standard]"
 
 Run the server with 
 ```
-uvicorn main:app --reload
+uvicorn App:app --reload
 ```
 
 
