@@ -12,7 +12,7 @@ def getSnow():
     return {"message": "Hello ServiceNow"}
 
 
-@router.get("/download")
-def getSnowFile():
-    get_file_attachment('INC0010001')
+@router.get("/download/{caseNo}")
+def getSnowFile(caseNo):
+    get_file_attachment(caseNo)
     return {"message": "Download Done"}
