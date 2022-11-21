@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 from .routers import snow, system
 
-from .Fileutils import archive
+from .Fileutils import archive, cleanupDirctory
 
 app = FastAPI()
 
@@ -18,9 +18,14 @@ app.include_router(system.router)
 def basicGet():
     res = archive('INC000001','./downloads/')
     if(res == True):
-        return {"message": "successfully zipped"}
+        cleanup = cleanupDirctory('./downloads/')
+        if(cleanup == True):
+            return {"message": "successfully zipped",
+                    "cleanup": "successfully cleanedup"}
+        else:
+            return {"message": "error in cleanedup"}
     else:
-        return {"message": "Hello World"}
+        return {"message": "zip operation error triggered"}
 
 @app.post("/")
 def basic_post(payLoad : dict = Body(...)):
