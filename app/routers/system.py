@@ -5,7 +5,8 @@ import json
 
 
 router = APIRouter(
-    prefix="/system"
+    prefix="/system",
+    tags=["System"]
 )
 
 @router.get("/")

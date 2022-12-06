@@ -3,7 +3,8 @@ from ..Snowutils import get_file_attachment
 
 
 router = APIRouter(
-    prefix="/snow"
+    prefix="/snow",
+    tags=["ServiceNow"]
 )
 
 

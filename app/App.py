@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.params import Body
 from pydantic import BaseModel
 
-from .routers import snow, system
+from .routers import snow, system, upload
 
 from .Fileutils import archive, cleanupDirctory
 
@@ -12,6 +12,7 @@ app = FastAPI()
 
 app.include_router(snow.router)
 app.include_router(system.router)
+app.include_router(upload.router)
 
 
 @app.get("/")
