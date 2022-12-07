@@ -1,5 +1,5 @@
 from fastapi import routing, APIRouter, FastAPI
-from ..Snowutils import get_file_attachment
+from ..utils.Snowutils import get_file_attachment
 
 
 router = APIRouter(

@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 from .routers import snow, system, upload
 
-from .Fileutils import archive, cleanupDirctory
+from .utils.Fileutils import archive, cleanupDirctory
 
 app = FastAPI()
 
